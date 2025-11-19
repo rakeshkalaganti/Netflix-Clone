@@ -1,1 +1,178 @@
-<!-- All my Files Displays Here -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netflix Clone - Rakesh</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="./assets/Images/logo-removebg-preview.png">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="nav__left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" 
+           alt="Logo" class="logo" />
+    </div>
+
+    <div class="nav__right">
+      <input type="text" id="search" placeholder="Search movies..." />
+      <button id="profileBtn" class="btn">Login</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <div class="hero__overlay">
+        <h1 class="hero__title">Watch Something Amazing</h1>
+        <p class="hero__desc">A Netflix-style responsive front-end using HTML, CSS & JS.</p>
+        <div class="hero__controls">
+          <button class="btn btn--large" id="playHero">Play</button>
+          <button class="btn btn--ghost" id="moreInfo">More Info</button>
+        </div>
+      </div>
+
+      <img class="hero__bg" 
+           src="https://picsum.photos/1600/900?blur=3&random=1" 
+           alt="hero bg" />
+    </section>
+
+    <!-- ROW SECTION -->
+    <section class="container">
+
+      <!-- TRENDING NOW -->
+      <h2 class="row__title">Trending Now</h2>
+      <div class="row" data-row>
+        <button class="row__nav left">◀</button>
+
+        <div class="row__inner">
+
+          <div class="tile" data-title="The Shawshank Redemption">
+            <img src="https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" />
+            <div class="overlay">
+              <div class="ovTitle">The Shawshank Redemption</div>
+              <div class="ovBtns">
+                <button class="ovPlay">▶</button>
+                <button class="ovInfo">i</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile" data-title="Inception">
+            <img src="https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg" />
+            <div class="overlay">
+              <div class="ovTitle">Inception</div>
+              <div class="ovBtns">
+                <button class="ovPlay">▶</button>
+                <button class="ovInfo">i</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile" data-title="Interstellar">
+            <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" />
+            <div class="overlay">
+              <div class="ovTitle">Interstellar</div>
+              <div class="ovBtns">
+                <button class="ovPlay">▶</button>
+                <button class="ovInfo">i</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile" data-title="The Dark Knight">
+            <img src="https://image.tmdb.org/t/p/w500/1hRoyzDtpgMU7Dz4JF22RANzQO7.jpg" />
+            <div class="overlay">
+              <div class="ovTitle">The Dark Knight</div>
+              <div class="ovBtns">
+                <button class="ovPlay">▶</button>
+                <button class="ovInfo">i</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="row__nav right">▶</button>
+      </div>
+
+      <!-- NEW RELEASES -->
+      <h2 class="row__title">New Releases</h2>
+
+      <div class="row" data-row>
+
+        <button class="row__nav left">◀</button>
+
+        <div class="row__inner">
+
+          <div class="tile" data-title="Dune">
+            <img src="https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg" />
+            <div class="overlay">
+              <div class="ovTitle">Dune</div>
+              <div class="ovBtns">
+                <button class="ovPlay">▶</button>
+                <button class="ovInfo">i</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tile" data-title="Joker">
+            <img src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" />
+            <div class="overlay">
+              <div class="ovTitle">Joker</div>
+              <div class="ovBtns">
+                <button class="ovPlay">▶</button>
+                <button class="ovInfo">i</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="row__nav right">▶</button>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Movie Info Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal__content">
+      <button id="modalClose" class="modal__close">✕</button>
+      <div class="modal__body">
+        <h3 id="modalTitle">Movie Info</h3>
+        <div class="videoPlaceholder">Trailer or info goes here (demo).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGIN MODAL -->
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal__content">
+      <button id="loginClose" class="modal__close">✕</button>
+
+      <div class="modal__body">
+        <h3>Login</h3>
+
+        <form id="loginForm">
+          <label>Username</label>
+          <input type="text" id="username" required />
+
+          <label>Password</label>
+          <input type="password" id="password" required />
+
+          <button class="btn" style="margin-top:12px">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Made with ❤️ by Rakesh — Netflix Clone
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
